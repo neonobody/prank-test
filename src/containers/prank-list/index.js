@@ -34,7 +34,7 @@ function PrankList({ category }) {
             <div className="position-relative prank-thumb p-1">
               <img src={prank.image_small} alt={prank.title.split(" ").map(t => t[0]).join("")} />
             </div>
-            <div><span class="oi oi-envelope-open"></span> {prank.sent}</div>
+            <div><span className="oi oi-envelope-open"></span> {prank.sent}</div>
             <Row>
               <Col sm={4}><span className="oi oi-thumb-up text-secondary"><span className="pl-2">{prank.likes}</span></span></Col>
               <Col sm={4}><span className="oi oi-thumb-down text-primary"><span className="pl-2">{prank.dislikes}</span></span></Col>
