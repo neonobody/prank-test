@@ -1,20 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Jumbotron } from "reactstrap";
-import AllPranksModal from "../../containers/modals/all-pranks";
+import { Link, Route } from "react-router-dom";
+import { Container, Jumbotron, ListGroup, ListGroupItem } from "reactstrap";
+
+import PranksModal from "../../containers/modals/pranks-modal";
+
+import "./styles.scss";
 
 function HomePage() {
   return (
     <Container>
-      <Jumbotron className="mt-5">
-        <h1 className="display-3">Prank List</h1>
-        <ul>
-          <li><Link to="view-all-pranks">View All Pranks</Link></li>
-          <li><Link to="new-prank-calls">New Pranks</Link></li>
-          <li><Link to="food-restaurant-prank-calls">Food and Restaurants</Link></li>
-        </ul>
+      <Jumbotron className="mt-5 bg-secondary">
+        <h1 className="display-3 caption font-weight-bold text-primary">Prank List</h1>
+        <ListGroup>
+          <ListGroupItem><Link to="view-all-pranks">View All Pranks</Link></ListGroupItem>
+          <ListGroupItem><Link to="new-prank-calls">New Pranks</Link></ListGroupItem>
+          <ListGroupItem><Link to="food-restaurant-prank-calls">Food and Restaurants</Link></ListGroupItem>
+        </ListGroup>
       </Jumbotron>
-      <AllPranksModal />
+      <Route path="/:category" component={PranksModal} />
     </Container>
   );
 }

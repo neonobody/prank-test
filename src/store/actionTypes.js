@@ -1,1 +1,0 @@
-export const SET_PRANKS = "SET_PRANKS";
