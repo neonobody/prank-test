@@ -17,7 +17,7 @@ function PranksModal() {
 
   return (
     <Modal isOpen={isOpen} toggle={toggle} size="lg">
-      <ModalHeader className="text-capitalize" toggle={toggle}>{category}</ModalHeader>
+      <ModalHeader className="text-capitalize" toggle={toggle}>{category.split("-").join(" ")}</ModalHeader>
       <ModalBody>
         <PrankList category={category} />
       </ModalBody>
